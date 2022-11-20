@@ -1,0 +1,44 @@
+---
+title: "model_details"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{model_details}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r global_options}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# Overview
+
+This package summarizes and displays the number of US highway traffic accidents on the map using data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System.
+
+The name of data files to read is "accident_(year).csv.bz2" and the (year) is numeric year such as 2013.
+
+# Functions
+
+## fars_summarize_years
+fars_summarize_years function shows the number of accidents in each month during the given year or years. The function takes year as numeric argument.
+
+```{r}
+fars_summarize_years(2013)
+```
+
+```{r}
+fars_summarize_years(2013:2015)
+```
+
+## fars_map_state
+fars_map_state function displays the accidents of a state in a given year as a map. First argument is the state code (from 01 to 50) and the second argument is the year.
+```{r}
+fars_map_state(01, 2015)
+```
